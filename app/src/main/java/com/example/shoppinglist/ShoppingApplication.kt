@@ -12,7 +12,8 @@ import org.kodein.di.generic.instance
 import org.kodein.di.generic.provider
 import org.kodein.di.generic.singleton
 
-class ShoppingApplication: Application(), KodeinAware {
+class ShoppingApplication : Application(), KodeinAware {
+
     override val kodein: Kodein = Kodein.lazy {
         import(androidXModule(this@ShoppingApplication))
         bind() from singleton { ShoppingDatabase(instance()) }
